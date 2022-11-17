@@ -7,7 +7,7 @@ public class Cliente extends Pessoa {
 
 	public Cliente() {
 	}
-
+	 
 	public Cliente(String nome, String cpf, String formaPagamento, String telefone) {
 		this.setNome(nome);
 		this.setCpf(cpf);
