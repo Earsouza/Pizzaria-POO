@@ -43,6 +43,6 @@ public class Sabor {
 
 	@Override
 	public String toString() {
-		return "\nSabor: " + this.nome + " \nIngredientes: " + this.ingredientes;
+		return "\nCodigo: " + this.id + "\nSabor: " + this.nome + " \nIngredientes: " + this.ingredientes;
 	}
 }

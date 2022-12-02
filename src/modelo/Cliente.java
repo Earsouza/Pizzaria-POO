@@ -3,11 +3,13 @@ package modelo;
 public class Cliente extends Pessoa {
 
 	private String telefone;
+	private int id;
 
 	public Cliente() {
 	}
 
-	public Cliente(String nome, String cpf, String telefone) {
+	public Cliente(int id, String nome, String cpf, String telefone) {
+		this.id = id;
 		this.setNome(nome);
 		this.setCpf(cpf);
 		this.telefone = telefone;
@@ -21,10 +23,18 @@ public class Cliente extends Pessoa {
 		this.telefone = telefone;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 
-		return "\nSabor: " + this.getNome() + " \nCPF: " + this.getCpf() + "Telefone: " + this.telefone;
+		return this.getId() + "-" + this.getNome();
 	}
 
 }

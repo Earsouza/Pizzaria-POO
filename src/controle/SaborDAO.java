@@ -52,7 +52,7 @@ public class SaborDAO implements ISaborDAO {
 	public boolean excluir(Sabor s, int id) {
 		for (Sabor sabor : tabelaSabores) {
 			if (sabor.getId() == id) {
-				tabelaSabores.remove(id);
+				tabelaSabores.remove(sabor);
 				return true;
 			}
 		}
@@ -61,6 +61,12 @@ public class SaborDAO implements ISaborDAO {
 
 	@Override
 	public ArrayList<Sabor> listarSabores() {
+		return tabelaSabores;
+	}
+	
+	public ArrayList<Sabor> listarNomeSabores(){
+		tabelaSabores
+		
 		return tabelaSabores;
 	}
 

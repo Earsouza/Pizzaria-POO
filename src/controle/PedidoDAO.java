@@ -2,6 +2,7 @@ package controle;
 
 import java.util.ArrayList;
 
+import modelo.Cliente;
 import modelo.IPedidoDAO;
 import modelo.Pedido;
 
@@ -9,6 +10,7 @@ public class PedidoDAO implements IPedidoDAO {
 
 	private static ArrayList<Pedido> tabelaPedidos;
 	private static PedidoDAO instancia;
+	ArrayList<Cliente> tabelaClientes;
 
 	private PedidoDAO() {
 
@@ -40,6 +42,7 @@ public class PedidoDAO implements IPedidoDAO {
 
 			if (pedido.getId() == id) {
 				pedido.setEndereco(p.getEndereco());
+				pedido.setValor(p.getValor());
 				return true;
 			}
 		}
@@ -52,7 +55,7 @@ public class PedidoDAO implements IPedidoDAO {
 		for (Pedido pedido : tabelaPedidos) {
 
 			if (pedido.getId() == id) {
-				tabelaPedidos.remove(id);
+				tabelaPedidos.remove(pedido);
 				return true;
 			}
 		}
@@ -62,6 +65,17 @@ public class PedidoDAO implements IPedidoDAO {
 	@Override
 	public ArrayList<Pedido> listarPedidos() {
 		return tabelaPedidos;
+
+	}
+
+	public boolean verificaCliente(Cliente c, int clienteSelecionado) {
+		for (Cliente cliente : tabelaClientes) {
+
+			if (cliente.getId() == clienteSelecionado) {
+				return true;
+			}
+		}
+		return false;
 
 	}
 }
