@@ -68,14 +68,5 @@ public class PedidoDAO implements IPedidoDAO {
 
 	}
 
-	public boolean verificaCliente(Cliente c, int clienteSelecionado) {
-		for (Cliente cliente : tabelaClientes) {
-
-			if (cliente.getId() == clienteSelecionado) {
-				return true;
-			}
-		}
-		return false;
-
-	}
+	
 }

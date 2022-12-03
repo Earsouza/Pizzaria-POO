@@ -65,9 +65,26 @@ public class SaborDAO implements ISaborDAO {
 	}
 	
 	public ArrayList<Sabor> listarNomeSabores(){
-		tabelaSabores
-		
 		return tabelaSabores;
+	}
+	
+	public void verificaSabor(int saborSelecionado) {
+		Boolean retorno = null;
+		for (Sabor sabor : tabelaSabores) {
+
+			if (sabor.getId() == saborSelecionado) {
+				retorno = true;
+			}
+			else {
+				retorno = false;
+			}
+		}
+		if(retorno == true) {
+			System.out.println("Sabor cadastrado!");
+		}
+		else {
+			System.out.println("Sabor indisponível");
+		}
 	}
 
 }

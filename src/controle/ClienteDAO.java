@@ -33,6 +33,26 @@ public class ClienteDAO implements IClienteDAO
 		tabelaClientes.add(c2);
 		tabelaClientes.add(c3);
 	}
+	
+	public void verificaCliente(int clienteSelecionado) {
+		Boolean retorno = null;
+		for (Cliente cliente : tabelaClientes) {
+
+			if (cliente.getId() == clienteSelecionado) {
+				retorno = true;
+				break;
+			}
+			else {
+				retorno = false;
+			}
+		}
+		if(retorno == true) {
+			System.out.println("Cadastrado no pedido");
+		}
+		else {
+			System.out.println("Usuario ainda não cadastrado");
+		}
+	}
 
 	@Override
 	public ArrayList<Cliente> listarClientes() {
